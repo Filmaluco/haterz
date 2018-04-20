@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:haterz/Util/google_login.dart';
+=======
+>>>>>>> parent of 790bd2a... added: homepage
 
-
-import "./HomePage.dart";
 
 
 class LandingPage extends StatelessWidget{
@@ -48,9 +49,13 @@ class LandingPage extends StatelessWidget{
                 )
             ),
             new RaisedButton(
+<<<<<<< HEAD
 
                 onPressed:  () => Navigator.of(context).push(new MaterialPageRoute(builder:
                 (BuildContext context) => new HomePage())),
+=======
+                onPressed:  handleLogIn,
+>>>>>>> parent of 790bd2a... added: homepage
                 color: Colors.black12,
                 child: new Text(
                   "Next",
