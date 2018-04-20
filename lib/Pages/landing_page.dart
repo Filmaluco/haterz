@@ -14,6 +14,7 @@ class LandingPage extends StatelessWidget{
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             new Container(
+
               padding: new EdgeInsets.all(10.0),
               decoration: new BoxDecoration(
                 border: new Border.all(
@@ -31,7 +32,32 @@ class LandingPage extends StatelessWidget{
                   ),
               ),
             ),
-
+            new RaisedButton(
+                onPressed:  handleLogIn,
+                color: Colors.black12,
+                child: new Text(
+                  "Google",
+                  textDirection: TextDirection.ltr,
+                  style: new TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    fontSize: 40.0,
+                  ),
+                )
+            ),
+            new RaisedButton(
+                onPressed:  handleLogIn,
+                color: Colors.black12,
+                child: new Text(
+                  "Next",
+                  textDirection: TextDirection.ltr,
+                  style: new TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    fontSize: 40.0,
+                  ),
+                )
+            ),
           ],
         ),
       )
@@ -40,9 +66,8 @@ class LandingPage extends StatelessWidget{
 
 
   handleLogIn(){
-    return true;
 
-
+  print("oi");
   }
 
 }
