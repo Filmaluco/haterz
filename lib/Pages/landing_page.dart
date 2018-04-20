@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import 'package:haterz/Util/google_login.dart';
 =======
+>>>>>>> parent of 790bd2a... added: homepage
+=======
+
 >>>>>>> parent of 790bd2a... added: homepage
 
 
@@ -50,9 +54,13 @@ class LandingPage extends StatelessWidget{
             ),
             new RaisedButton(
 <<<<<<< HEAD
+<<<<<<< HEAD
 
                 onPressed:  () => Navigator.of(context).push(new MaterialPageRoute(builder:
                 (BuildContext context) => new HomePage())),
+=======
+                onPressed:  handleLogIn,
+>>>>>>> parent of 790bd2a... added: homepage
 =======
                 onPressed:  handleLogIn,
 >>>>>>> parent of 790bd2a... added: homepage
