@@ -35,7 +35,7 @@ class LandingPage extends StatelessWidget{
               ),
             ),
             new RaisedButton(
-                onPressed:  handleGoogleSignIn,
+                onPressed:  () => {},
                 color: Colors.black12,
                 child: new Text(
                   "Google",
