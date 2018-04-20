@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-
 import "./Pages/landing_page.dart";
+import 'Pages/HomePage.dart';
+import 'Util/GoogleSignIn.dart';
+
 void main() => runApp(new Haterzz());
 
 
@@ -11,7 +13,7 @@ class Haterzz extends StatelessWidget {
     return new MaterialApp(
       title: 'Haterzz',
 
-      home: new LandingPage(),
+      home: (googleSignIn.currentUser==null ? new LandingPage() : new HomePage()),
     );
   }
 }
