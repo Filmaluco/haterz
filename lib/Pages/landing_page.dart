@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:haterz/Util/google_login.dart';
 
 
+import "./HomePage.dart";
+
+
 class LandingPage extends StatelessWidget{
 
   @override
@@ -45,7 +48,9 @@ class LandingPage extends StatelessWidget{
                 )
             ),
             new RaisedButton(
-                onPressed: () => {},
+
+                onPressed:  () => Navigator.of(context).push(new MaterialPageRoute(builder:
+                (BuildContext context) => new HomePage())),
                 color: Colors.black12,
                 child: new Text(
                   "Next",
