@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-
+import 'package:haterz/Util/google_login.dart';
 
 
 class LandingPage extends StatelessWidget{
@@ -33,7 +32,7 @@ class LandingPage extends StatelessWidget{
               ),
             ),
             new RaisedButton(
-                onPressed:  handleLogIn,
+                onPressed:  handleGoogleSignIn,
                 color: Colors.black12,
                 child: new Text(
                   "Google",
@@ -46,7 +45,7 @@ class LandingPage extends StatelessWidget{
                 )
             ),
             new RaisedButton(
-                onPressed:  handleLogIn,
+                onPressed: () => {},
                 color: Colors.black12,
                 child: new Text(
                   "Next",
@@ -64,13 +63,9 @@ class LandingPage extends StatelessWidget{
     );
   }
 
-
-  handleLogIn(){
-
-  print("oi");
-  }
-
 }
+
+
 
 
 
