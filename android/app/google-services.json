@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "796930273260",
+    "firebase_url": "https://shifthaterz.firebaseio.com",
+    "project_id": "shifthaterz",
+    "storage_bucket": "shifthaterz.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:796930273260:android:fa1da32551001bbe",
+        "android_client_info": {
+          "package_name": "shiftappens.haterz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "796930273260-4gouq7nkvmgj9oohh3t7mta2jr6752sq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlM6icIxnHNGX_-82OBZASTGtTr3fBOLI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
