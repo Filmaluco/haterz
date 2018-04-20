@@ -1,10 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:path/path.dart';
-
-
 import "./HomePage.dart";
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'dart:async';
 
+final FirebaseAuth _auth = FirebaseAuth.instance;
+final _googleSignIn = GoogleSignIn();
 
+Future<FirebaseUser> _handleSignIn() async {
+  GoogleSignInAccount googleUser = await _googleSignIn.signIn();
+  GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+  FirebaseUser user = await _auth.signInWithGoogle(
+    accessToken: googleAuth.accessToken,
+    idToken: googleAuth.idToken,
+  );
+  print("signed in " + user.displayName);
+  return user;
+}
 
 class LandingPage extends StatelessWidget{
 
@@ -36,7 +48,7 @@ class LandingPage extends StatelessWidget{
                 ),
               ),
               new RaisedButton(
-                  onPressed:  handleLogIn,
+                  onPressed:  _handleSignIn,
                   color: Colors.black12,
                   child: new Text(
                     "Google",
@@ -68,13 +80,6 @@ class LandingPage extends StatelessWidget{
         )
     );
   }
-
-
-  handleLogIn(){
-
-    print("oi");
-  }
-
 }
 
 
