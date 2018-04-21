@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import "../Util/GoogleSignIn.dart";
-
+import "../Util/Globals.dart";
 
 class AnswerButton extends StatelessWidget{
 
@@ -11,6 +10,9 @@ class AnswerButton extends StatelessWidget{
 
 
   AnswerButton(this._answer,this._onTap,this._color, this._otherPlayerAnswer);
+
+
+
 
   @override
   Widget build(BuildContext context) {
