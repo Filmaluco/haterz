@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import "../UI/PersonContainer.dart";
+import "../Util/GoogleSignIn.dart";
 
 class HomePage extends StatefulWidget{
 
@@ -49,9 +50,11 @@ class HomePageState extends State<HomePage> {
                      ),
                    ),
                     new Container(
-                      child:  new CircleAvatar(
-                        child: new Icon(Icons.account_circle, size: 130.0,),
-                        backgroundColor: Colors.white,
+                      child:  new ClipOval(
+                        child: new Image.network(googleSignIn.currentUser.photoUrl,
+                          fit: BoxFit.cover,
+                          width: 100.0,
+                          height: 100.0,),
                       ),
                       width: 130.0,
                       height: 130.0,
@@ -61,7 +64,7 @@ class HomePageState extends State<HomePage> {
                    new Container(
                      margin: EdgeInsets.only(bottom: 10.0, top: 10.0),
                      child: new Text(
-                         "Nuno",
+                         googleSignIn.currentUser.displayName,
                          textDirection: TextDirection.ltr,
                          style:  new TextStyle(
                            fontWeight: FontWeight.bold,
