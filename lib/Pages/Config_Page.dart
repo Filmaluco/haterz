@@ -18,7 +18,7 @@ class Config_Page_State extends State<Config_Page>{
 
         actions: <Widget>[
           new IconButton(icon: new Icon(Icons.settings_power,color: Colors.white), onPressed: () => Navigator.of (context).pushAndRemoveUntil(
-              new MaterialPageRoute(builder: (BuildContext context) =>new LandingPage()),
+              new MaterialPageRoute(builder: (BuildContext context) => new LandingPage()),
                   (Route route) => route == null
           ),//push
           )

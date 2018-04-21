@@ -6,6 +6,7 @@ class Game{
   String id;
   String name;
   HaterzUser user1, user2;
+  bool reveal_user1, reveal_user2;
   Question questions;
   Message messages;
 }

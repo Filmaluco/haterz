@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:haterz/Util/UserModel.dart';
@@ -15,13 +17,16 @@ Future<FirebaseUser> handleGoogleSignIn() async {
     idToken: googleAuth.idToken,
   );
 
+  var rng = new Random();
+  String random_image = "https://picsum.photos/458/354?image=" + rng.nextInt(500).toString();
+
   HaterzUser newUser = new HaterzUser(googleSignIn.currentUser.email, googleSignIn.currentUser.displayName,
-      googleSignIn.currentUser.photoUrl, "https://picsum.photos/458/354?image=497", "Bio Here");
+      googleSignIn.currentUser.photoUrl, random_image, "Bio Here");
 
   if (!userExist(newUser)){
     UsersDatabase.push().set(newUser.toJson());
-  };
+    haterzUser = newUser;
+  }
 
-  print(googleSignIn.currentUser.displayName);
   return user;
 }

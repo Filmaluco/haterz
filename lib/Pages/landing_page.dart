@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
 import "./HomePage.dart";
 import '../Util/GoogleSignIn.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import '../Util/Globals.dart';
 
 class LandingPage extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
+
+    googleSignIn.signOut();
 
      login_google() {
        handleGoogleSignIn().whenComplete(() =>

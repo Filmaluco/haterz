@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import "../UI/PersonContainer.dart";
 import "../Util/Globals.dart";
 import "./Config_Page.dart";
-import 'dart:async';
+import '../Util/JoinLobby.dart';
 class HomePage extends StatefulWidget{
 
   @override
@@ -101,7 +101,7 @@ class HomePageState extends State<HomePage> {
       ),
     floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: new FloatingActionButton(
-          onPressed: null,
+          onPressed: joinLobby,
           child: new Icon(Icons.all_inclusive,size: 55.0,),
           backgroundColor: Colors.deepOrangeAccent),
     );

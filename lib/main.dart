@@ -1,8 +1,8 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
+import 'package:haterz/Util/LobbyModel.dart';
 import 'package:haterz/Util/UserModel.dart';
 import "./Pages/landing_page.dart";
-import 'Pages/HomePage.dart';
 import 'Util/Globals.dart';
 
 void main() => runApp(new Haterzz());
@@ -17,6 +17,13 @@ class Haterzz extends StatelessWidget {
     data.onChildAdded.listen( (Event event) =>
         users.add(HaterzUser.fromSnapshot(event.snapshot))
     );
+
+    LobbyDatabase.onChildAdded.listen( (Event event) =>
+        lobbies.add(Lobby.fromSnapshot(event.snapshot))
+    );
+
+    LobbyDatabase.onChildRemoved.listen( (Event event) =>
+        lobbies.remove(event.snapshot));
 
 
     return new MaterialApp(
