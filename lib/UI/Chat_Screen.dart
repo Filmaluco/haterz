@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import "../Util/GoogleSignIn.dart";
-
+import "../Util/Globals.dart";
 import "./ChatMessageContainer.dart";
 
 

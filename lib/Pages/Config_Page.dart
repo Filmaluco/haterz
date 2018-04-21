@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import "../Util/GoogleSignIn.dart";
+import "../Util/Globals.dart";
 
 
 class Config_Page extends StatefulWidget{
@@ -10,10 +10,6 @@ class Config_Page extends StatefulWidget{
 }
 
 class Config_Page_State extends State<Config_Page>{
-  final TextEditingController _textController = new TextEditingController();
-
-
-
   @override
   Widget build(BuildContext context) {
     return new Scaffold(

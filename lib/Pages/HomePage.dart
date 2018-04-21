@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import "../UI/PersonContainer.dart";
-import "../Util/GoogleSignIn.dart";
+import "../Util/Globals.dart";
 import "./Config_Page.dart";
 
 class HomePage extends StatefulWidget{
