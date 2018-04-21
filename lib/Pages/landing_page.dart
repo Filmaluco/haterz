@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
 import "./HomePage.dart";
 import '../Util/GoogleSignIn.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'dart:async';
 
 class LandingPage extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
+
+     login_google() {
+       handleGoogleSignIn().whenComplete(() =>
+           Navigator.of(context).push(new MaterialPageRoute(builder:
+               (BuildContext context) => new HomePage())));
+     }
+
     return new Material(
         color: Colors.deepOrangeAccent,
         child: new Container(
@@ -31,34 +40,23 @@ class LandingPage extends StatelessWidget{
                   ),
                 ),
               ),
-              new RaisedButton(
-                  onPressed: handleGoogleSignIn,
-                  color: Colors.black12,
-                  child: new Text(
-                    "Google",
-                    textDirection: TextDirection.ltr,
-                    style: new TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                      fontSize: 40.0,
-                    ),
-                  )
-              ),
-              new RaisedButton(
-                  onPressed:  () => Navigator.of(context).push(new MaterialPageRoute(builder:
-                      (BuildContext context) => new HomePage())),
-
-                  color: Colors.black12,
-                  child: new Text(
-                    "Next",
-                    textDirection: TextDirection.ltr,
-                    style: new TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                      fontSize: 40.0,
-                    ),
-                  )
-              ),
+              new Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  new Text("Logins: "),
+                  new IconButton(
+                    onPressed: login_google,
+                    iconSize: 35.0,
+                    color: Colors.amberAccent,
+                    icon: new Icon(FontAwesomeIcons.google)
+                  ),
+                  new IconButton(
+                      onPressed: null,
+                      iconSize: 35.0,
+                      disabledColor: Colors.black54,
+                      icon: new Icon(FontAwesomeIcons.facebook)
+                  ),
+                ],)
             ],
           ),
         )
