@@ -17,7 +17,7 @@ class Game_Screen_State extends State<Game_Screen>{
         new Column(
           children: <Widget>[
             new AnswerButton("autista", null, Colors.white,true),
-            new  QuestionArea("What is Lanhoso0000000000000000o?"),
+            new  QuestionArea("What is Lanhoso?"),
 
             new AnswerButton("autista x2",
                 ()=>setState((){
