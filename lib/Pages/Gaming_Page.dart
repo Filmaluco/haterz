@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import "../UI/Chat_Screen.dart";
-
+import "../UI/Game_Screen.dart";
 class  GamingPage extends StatefulWidget{
 
   final String _name;
@@ -40,11 +40,7 @@ class GamingPageState extends State<GamingPage>{
           ),
           body: new TabBarView(
             children: [
-              new Material(
-                color: Colors.white,
-                child: new Icon(Icons.games,
-                    color: Colors.deepOrangeAccent),
-              ),
+              new Game_Screen(),
               new ChatScreen(),
             ],
           ),

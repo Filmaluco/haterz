@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import "../Util/GoogleSignIn.dart";
 
 import "./ChatMessageContainer.dart";
 
@@ -88,7 +89,7 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin{
     setState(() {
       _isComposing = false;
     });
-    _sendMessage("Nuno",this._textController.text);
+    _sendMessage(googleSignIn.currentUser.displayName,this._textController.text);
     _textController.clear();
 
   }
