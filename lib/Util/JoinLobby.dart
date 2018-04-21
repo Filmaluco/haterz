@@ -38,7 +38,7 @@ joinLobby() {
 
 createNewLobby(){
   var rng = new Random();
-  String lobbyId = "filmaluco" + rng.nextInt(500).toString();
+  String lobbyId = "user1" + rng.nextInt(500).toString();
   var lobby = new Lobby(lobbyId,"0", "user1", null, "0", null);
   LobbyDatabase.child(lobbyId).set(lobby.toJson());
 
