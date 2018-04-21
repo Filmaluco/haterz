@@ -6,8 +6,9 @@ import 'dart:math';
 joinLobby() {
 
   bool fl_noGameFound = true;
+  String lobbyId;
 
-  if (lobbies.length >= 1) {
+  if (lobbies.length != 0) {
     for (int i = 0; i < lobbies.length; i++) {
       if (lobbies[i].status == "0" && fl_noGameFound) {
         fl_noGameFound = false;
@@ -29,34 +30,36 @@ joinLobby() {
 
         LobbyDatabase.onChildChanged.listen(_handle_user1connected);
       }
-      if(fl_noGameFound){ createNewLobby(); }
+      if(fl_noGameFound){ lobbyId = createNewLobby(); }
     }
 
-  }else { createNewLobby();}
+  }else { lobbyId =createNewLobby();}
+
+  if(fl_noGameFound){
+    _handle_user2connected(Event event){
+      Lobby target = Lobby.fromSnapshot(event.snapshot);
+
+      if(target.user2_id == "0") { // its the first connection
+        target.user1_id = haterzUser.id;
+        LobbyDatabase.child(lobbyId).set(target.toJson());
+      }else{
+        target.status = "1";
+        LobbyDatabase.child(lobbyId).set(target.toJson());
+        print("Creating lobby and sending lobby info");
+        return;
+      }
+    }
+
+    LobbyDatabase.onChildChanged.listen(_handle_user2connected);
+  }
 
 }
 
-createNewLobby(){
+String createNewLobby(){
   var rng = new Random();
   String lobbyId = "user1" + rng.nextInt(500).toString();
+  print(lobbyId);
   var lobby = new Lobby(lobbyId,"0", "user1", null, "0", null);
   LobbyDatabase.child(lobbyId).set(lobby.toJson());
-
-
-  _handle_user2connected(Event event){
-  Lobby target = Lobby.fromSnapshot(event.snapshot);
-
-  if(target.user2_id == "0") { // its the first connection
-  target.user1_id = haterzUser.id;
-  LobbyDatabase.child(lobbyId).set(target.toJson());
-  }else{
-  target.status = "1";
-  LobbyDatabase.child(lobbyId).set(target.toJson());
-  print("Creating lobby and sending lobby info");
-  return;
-  }
-  }
-
-  LobbyDatabase.onChildChanged.listen(_handle_user2connected);
-
+  return lobbyId;
 }

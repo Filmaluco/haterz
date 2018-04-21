@@ -22,6 +22,18 @@ class Haterzz extends StatelessWidget {
         lobbies.add(Lobby.fromSnapshot(event.snapshot))
     );
 
+    updateList(Event event){
+      Lobby target = Lobby.fromSnapshot(event.snapshot);
+
+      for(int i = 0; i < lobbies.length; i++){
+        if(target.id == lobbies[i]){
+          lobbies[i]=target;
+        }
+      }
+    }
+
+    LobbyDatabase.onChildChanged.listen(updateList);
+
     LobbyDatabase.onChildRemoved.listen( (Event event) =>
         lobbies.remove(event.snapshot));
 
