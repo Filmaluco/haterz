@@ -60,7 +60,7 @@ class Config_Page_State extends State<Config_Page>{
                            style: new TextStyle(fontSize: 25.0),
                          ),
                        ),
-                       
+
 
                      ],
                    ),

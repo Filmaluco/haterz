@@ -11,8 +11,8 @@ class Haterzz extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
+      theme: new ThemeData.light(),
       title: 'Haterzz',
-
       home: (googleSignIn.currentUser==null ? new LandingPage() : new HomePage()),
     );
   }
