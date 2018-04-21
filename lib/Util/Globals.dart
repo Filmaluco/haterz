@@ -7,16 +7,12 @@ final googleSignIn = GoogleSignIn();
 
 //Database
 final UsersDatabase = FirebaseDatabase.instance.reference().child('Users');
+final List<HaterzUser> users = List();
 
 
 //functions
 bool userExist(HaterzUser newUser){
 
-  List<HaterzUser> users = List();
-  var data = FirebaseDatabase.instance.reference().child('Users');
-  data.onChildAdded.listen( (Event event) =>
-      users.add(HaterzUser.fromSnapshot(event.snapshot))
-  );
 
 
   for(int i = 0; i < users.length; i++){
