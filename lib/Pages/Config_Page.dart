@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import "../Util/GoogleSignIn.dart";
-
-
+import "landing_page.dart";
 class Config_Page extends StatefulWidget{
 
 
@@ -19,6 +18,15 @@ class Config_Page_State extends State<Config_Page>{
     return new Scaffold(
 
       appBar: new AppBar(
+
+        actions: <Widget>[
+          new IconButton(icon: new Icon(Icons.settings_power,color: Colors.white), onPressed: () => Navigator.of (context).pushAndRemoveUntil(
+              new MaterialPageRoute(builder: (BuildContext context) =>new LandingPage()),
+                  (Route route) => route == null
+          ),//push
+          )
+        ],
+
         backgroundColor: Colors.deepOrangeAccent,
         title: new Text(
             "Configurações"
