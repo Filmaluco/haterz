@@ -16,13 +16,13 @@ class LandingPage extends StatelessWidget{
 
     return new Material(
 
+
         color: Colors.deepOrangeAccent,
         child: new Container(
           child: new Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               new Container(
-
                 padding: new EdgeInsets.all(10.0),
                 decoration: new BoxDecoration(
                   border: new Border.all(
@@ -43,7 +43,6 @@ class LandingPage extends StatelessWidget{
                 new Container(
                 padding: const EdgeInsets.all(40.0),
                 child: new Form(
-
                   autovalidate: true,
                   child: new Column(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -51,11 +50,15 @@ class LandingPage extends StatelessWidget{
                       new TextFormField(
 
                         decoration: new InputDecoration(
+                          hintStyle: new TextStyle(color: Colors.white),
+                          labelStyle: new TextStyle(color: Colors.black),
                           labelText: "Enter Email", fillColor: Colors.white),
                           keyboardType: TextInputType.emailAddress,
                         ),
                       new TextFormField(
                         decoration: new InputDecoration(
+                          hintStyle: new TextStyle(color: Colors.white),
+                          labelStyle: new TextStyle(color: Colors.black),
                           labelText: "Enter Password",
                         ),
                           obscureText: true,
