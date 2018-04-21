@@ -7,6 +7,8 @@ class Game_Screen extends StatefulWidget{
 }
 
 class Game_Screen_State extends State<Game_Screen>{
+
+  bool teste = false;
   @override
   Widget build(BuildContext context) {
     return new Stack(
@@ -14,10 +16,17 @@ class Game_Screen_State extends State<Game_Screen>{
       children: <Widget>[
         new Column(
           children: <Widget>[
-            new AnswerButton("autista", null, Colors.white),
-            new  QuestionArea("What is Lanhoso?"),
+            new AnswerButton("autista", null, Colors.white,true),
+            new  QuestionArea("What is Lanhoso0000000000000000o?"),
 
-            new AnswerButton("autista x2", null, Colors.white),
+            new AnswerButton("autista x2",
+                ()=>setState((){
+                  if(this.teste)
+                    this.teste=false;
+                  else
+                    this.teste=true;
+                })
+                , Colors.white,this.teste),
 
           ],
         )

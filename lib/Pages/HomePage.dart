@@ -41,7 +41,7 @@ class HomePageState extends State<HomePage> {
                        children: <Widget>[
                          new IconButton(
                              icon: new Icon(
-                               Icons.edit,
+                               Icons.settings,
                                color: Colors.white,
                              ),
                              onPressed: () => Navigator.of(context).push(new MaterialPageRoute(builder:
