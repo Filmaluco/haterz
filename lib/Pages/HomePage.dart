@@ -102,7 +102,7 @@ class HomePageState extends State<HomePage> {
     floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: new FloatingActionButton(
           onPressed: null,
-          child: new Icon(Icons.help_outline,size: 55.0,),
+          child: new Icon(Icons.all_inclusive,size: 55.0,),
           backgroundColor: Colors.deepOrangeAccent),
     );
   }
