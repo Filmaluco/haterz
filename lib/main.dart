@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import "./Pages/landing_page.dart";
 import 'Pages/HomePage.dart';
-import 'Util/GoogleSignIn.dart';
+import 'Util/Globals.dart';
 
 void main() => runApp(new Haterzz());
 
