@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import "../UI/PersonContainer.dart";
 import "../Util/GoogleSignIn.dart";
+import "./Config_Page.dart";
 
 class HomePage extends StatefulWidget{
 
@@ -43,7 +44,8 @@ class HomePageState extends State<HomePage> {
                                Icons.edit,
                                color: Colors.white,
                              ),
-                             onPressed: null
+                             onPressed: () => Navigator.of(context).push(new MaterialPageRoute(builder:
+                                 (BuildContext context) => new Config_Page())),
                          )
                        ],
                        mainAxisAlignment: MainAxisAlignment.end,
